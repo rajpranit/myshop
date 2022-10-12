@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:myshop/screens/products_overview.dart';
 
 void main() => runApp(MyApp());
 
@@ -13,20 +14,8 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: HomePage(),
-    );
-  }
-}
-
-class HomePage extends StatelessWidget {
-  const HomePage({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('MyShop'),
-      ),
+      theme: ThemeData(primaryColor: Colors.red),
+      home: const ProductOveriewScreen(),
     );
   }
 }
