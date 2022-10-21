@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:myshop/screens/products-detail.dart';
 import 'package:myshop/screens/products_overview.dart';
-
 import 'package:provider/provider.dart';
 
 import './providers/products.dart';
@@ -16,7 +16,7 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
-      create: (ctx) => Products(),
+      create: (context) => Products(),
       child: MaterialApp(
         theme: ThemeData(
           accentColor: Colors.amber,
@@ -27,6 +27,9 @@ class _MyAppState extends State<MyApp> {
           ),
         ),
         home: ProductOveriewScreen(),
+        routes: {
+          '/product-detail': (context) => const ProductDetailScreen(),
+        },
       ),
     );
   }

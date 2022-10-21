@@ -11,32 +11,36 @@ class ProductItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ClipRRect(
-      borderRadius: BorderRadius.circular(20),
-      child: GridTile(
-        // ignore: sort_child_properties_last
+    return GestureDetector(
+      onTap: () =>
+          Navigator.pushNamed(context, '/product-detail', arguments: id),
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(20),
+        child: GridTile(
+          // ignore: sort_child_properties_last
 
-        child: Image.network(
-          imageUrl,
-          fit: BoxFit.cover,
-        ),
-        footer: GridTileBar(
-          leading: IconButton(
-            color: Colors.amber.shade300,
-            icon: const Icon(Icons.favorite),
-            onPressed: () {},
+          child: Image.network(
+            imageUrl,
+            fit: BoxFit.cover,
           ),
-          title: Text(
-            name,
-            textAlign: TextAlign.center,
-            style: Theme.of(context).textTheme.bodyMedium,
+          footer: GridTileBar(
+            leading: IconButton(
+              color: Colors.amber.shade300,
+              icon: const Icon(Icons.favorite),
+              onPressed: () {},
+            ),
+            title: Text(
+              name,
+              textAlign: TextAlign.center,
+              style: Theme.of(context).textTheme.bodyMedium,
+            ),
+            trailing: IconButton(
+              color: Colors.amber.shade300,
+              icon: const Icon(Icons.shopping_cart),
+              onPressed: () {},
+            ),
+            backgroundColor: Colors.black54,
           ),
-          trailing: IconButton(
-            color: Colors.amber.shade300,
-            icon: const Icon(Icons.shopping_cart),
-            onPressed: () {},
-          ),
-          backgroundColor: Colors.black54,
         ),
       ),
     );
