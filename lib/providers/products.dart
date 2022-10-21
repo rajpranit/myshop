@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-import '../models/product.dart';
+import 'product.dart';
 
 class Products with ChangeNotifier {
   final List<Product> _items = [
-    const Product(
+    Product(
       id: 'p1',
       name: 'Red Shirt',
       description: 'A red shirt - it is pretty red!',
@@ -12,7 +12,7 @@ class Products with ChangeNotifier {
       imageUrl:
           'https://cdn.pixabay.com/photo/2016/10/02/22/17/red-t-shirt-1710578_1280.jpg',
     ),
-    const Product(
+    Product(
       id: 'p2',
       name: 'Trousers',
       description: 'A nice pair of trousers.',
@@ -20,7 +20,7 @@ class Products with ChangeNotifier {
       imageUrl:
           'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Trousers%2C_dress_%28AM_1960.022-8%29.jpg/512px-Trousers%2C_dress_%28AM_1960.022-8%29.jpg',
     ),
-    const Product(
+    Product(
       id: 'p3',
       name: 'Yellow Scarf',
       description: 'Warm and cozy - exactly what you need for the winter.',
@@ -28,7 +28,7 @@ class Products with ChangeNotifier {
       imageUrl:
           'https://live.staticflickr.com/4043/4438260868_cc79b3369d_z.jpg',
     ),
-    const Product(
+    Product(
       id: 'p4',
       name: 'A Pan',
       description: 'Prepare any meal you want.',
