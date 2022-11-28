@@ -1,12 +1,15 @@
 // ignore_for_file: sort_child_properties_last, duplicate_ignore
-import 'package:provider/provider.dart';
-import '../providers/product.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+
+import '../providers/product.dart';
+import '../providers/cart.dart';
 
 class ProductItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final product = Provider.of<Product>(context, listen: false);
+    final cart = Provider.of<Cart>(context, listen: false);
 
     return ClipRRect(
       borderRadius: BorderRadius.circular(20),
@@ -40,7 +43,9 @@ class ProductItem extends StatelessWidget {
             trailing: IconButton(
               color: Colors.amber.shade300,
               icon: const Icon(Icons.shopping_cart),
-              onPressed: () {},
+              onPressed: () {
+                cart.addItem(product.id, product.price, product.name);
+              },
             ),
             backgroundColor: Colors.black54,
           ),
